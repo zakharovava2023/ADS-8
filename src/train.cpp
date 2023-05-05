@@ -5,12 +5,11 @@ void Train::addCage(bool light) {
     Cage* temp = new Cage;
     temp->light = light;
     temp->next = temp->prev = nullptr;
-    if (first==nullptr) {
+    if (first == nullptr) {
         first = temp;
         first->next = temp;
         temp->prev = first;
-    } 
-    else {
+    } else {
         temp->next = first->next;
         temp->prev = first;
         first->next->prev = temp;
@@ -26,8 +25,7 @@ int Train::getLength() {
         if (cur->light == false) {
             count++;
             countOp++;
-        } 
-        else {
+        }  else {
             countOp++;
             cur->light = false;
             for (int i = count; i > 0; i--) {
